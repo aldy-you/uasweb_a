@@ -11,16 +11,16 @@ class JadwalModel extends Model
 
     public function guru()
     {
-        return $this->belongsTo('App\GuruModel');
+        return $this->belongsTo(GuruModel::class, 'guru_id');
     }
 
     public function matpel()
     {
-        return $this->belongsTo('App\MatpelModel');
+        return $this->belongsTo(MatpelModel::class, 'matpel_id');
     }
 
     public function ruang()
     {
-        return $this->belongsTo('App\RuangModel');
+        return $this->belongsTo(RuangModel::class, 'ruang_id');
     }
 }

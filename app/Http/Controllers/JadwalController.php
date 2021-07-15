@@ -13,7 +13,13 @@ class JadwalController extends Controller
     public function index()
     {
         Auth::user()->name;
-        $data = JadwalModel::all();
+        $data = JadwalModel::with('guru', 'matpel', 'ruang')->get();
+        return response()->json($data);
+    }
+    public function show($data)
+    {
+        Auth::user()->name;
+        $data = JadwalModel::with('guru', 'matpel', 'ruang')->where('id', $data)->first();
         return response()->json($data);
     }
     public function create(Request $request)

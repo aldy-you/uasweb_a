@@ -16,6 +16,12 @@ class GuruController extends Controller
         $data = GuruModel::all();
         return response()->json($data);
     }
+    public function show($id)
+    {
+        Auth::user()->name;
+        $data = GuruModel::where('id', $id)->get();
+        return response()->json($data);
+    }
     public function create(Request $request)
 
     {

@@ -16,10 +16,16 @@ class JadwalController extends Controller
         $data = JadwalModel::with('guru', 'matpel', 'ruang')->get();
         return response()->json($data);
     }
-    public function show($data)
+    public function data($data)
     {
         Auth::user()->name;
         $data = JadwalModel::with('guru', 'matpel', 'ruang')->where('id', $data)->first();
+        return response()->json($data);
+    }
+    public function show($id)
+    {
+        Auth::user()->name;
+        $data = JadwalModel::where('id', $id)->get();
         return response()->json($data);
     }
     public function create(Request $request)

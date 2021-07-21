@@ -16,6 +16,12 @@ class MatpelController extends Controller
         $data = MatpelModel::all();
         return response()->json($data);
     }
+    public function show($id)
+    {
+        Auth::user()->name;
+        $data = MatpelModel::where('id', $id)->get();
+        return response()->json($data);
+    }
     public function create(Request $request)
 
     {

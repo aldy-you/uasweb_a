@@ -16,6 +16,12 @@ class RuangController extends Controller
         $data = RuangModel::all();
         return response()->json($data);
     }
+    public function show($id)
+    {
+        Auth::user()->name;
+        $data = RuangModel::where('id', $id)->get();
+        return response()->json($data);
+    }
     public function create(Request $request)
 
     {
